@@ -37,9 +37,22 @@
     height: 100%;
 }
 
+#menu .items ul { /*Propiedades ul menú*/
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+#menu .logo-menu { /*Logos menú*/
+    display: inline-flex;
+    height: 80%;
+}
+
 #menu .items li { /*Items li menú*/
     display: inline-flex;
+    align-items: center;
     margin: auto 1vw auto 1vw;
+    height: 100%;
 }
 
 #menu .items a { /*Hipervínculos menú*/
@@ -80,7 +93,7 @@
     justify-content: center;
     width: 100%;
     height: 100vh;
-    background-image: url('../img/arg.jpg');
+    background-image: url('../img/banner/arg.jpg');
     background-size: cover;
     background-position-x: center;
 }
