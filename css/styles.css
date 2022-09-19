@@ -6,18 +6,18 @@
     text-decoration: none;
 }
 
-/*    Start Menu    */
-#menu {
+/*//////Start Menu//////*/
+#menu { /*Barra de menú*/
     display: flex;
     position: fixed;
     width: 100%;
     height: 50px;
     z-index: 5;
     background: linear-gradient(to right, #212121, #0061b5);
-    box-shadow: 5px 2px 10px black;
+    box-shadow: 0px 5px 10px black;
 }
 
-#menu .logo {
+#menu .logo { /*Contenedor logo*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,11 +25,11 @@
     height: 100%;
 }
 
-#menu .logo img {
+#menu .logo img { /*Logo*/
     height: 80%;
 }
 
-#menu .items {
+#menu .items { /*Contenedor items menú*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,22 +37,18 @@
     height: 100%;
 }
 
-#menu .items li {
+#menu .items li { /*Items li menú*/
     display: inline-flex;
     margin: auto 1vw auto 1vw;
 }
 
-#menu .items a {
+#menu .items a { /*Hipervínculos menú*/
     text-decoration: none;
     color: white;
     transition: color 0.3s;
 }
 
-#menu .items a:hover {
-    color: #ffbc1f;
-}
-
-#menu .colapse-menu {
+#menu .colapse-menu { /*Contenedor svg icono desplegable*/
     display: none;
     justify-content: flex-end;
     align-items: center;
@@ -60,22 +56,25 @@
     height: 100%;
 }
 
-#menu .colapse-menu .svg-icon {
+#menu .colapse-menu .svg-icon { /*Contenedor icono desplegable*/
     display: flex;
     justify-content: flex-end;
     width: 70%;
     height: 100%;
 }
 
-#menu .colapse-menu .menu-icon {
+#menu .colapse-menu .menu-icon { /*Color y tamaño icono desplegable*/
     fill: white;
     scale: 2;
 }
 
-/*    End Menu    */
+#menu .items a:hover { /*Animación hipervínculos*/
+    color: #ffbc1f;
+}
+/*//////End Menu//////*/
 
-/*    Start Banner    */
-#banner {
+/*//////Start Banner//////*/
+#banner { /*Contenedor banner*/
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -86,7 +85,7 @@
     background-position-x: center;
 }
 
-#banner_content {
+#banner_content { /*Fondo para opacidad banner*/
     position: absolute;
     width: 100%;
     height: 100vh;
@@ -94,7 +93,7 @@
     opacity: .4;
 }
 
-#banner_tittle {
+#banner_tittle { /*Contenedor título banner*/
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -104,7 +103,7 @@
     opacity: .8;
 }
 
-#banner_tittle h1 {
+#banner_tittle h1 { /*Título banner*/
     text-align: center;
     color: white;
     margin-bottom: 120px;
@@ -112,7 +111,7 @@
     font-size: 50px;
 }
 
-.button {
+.button { /*Botón banner*/
     position: absolute;
     margin-bottom: 2%;
     z-index: 4;
@@ -125,43 +124,42 @@
     cursor: pointer;
 }
 
-.button:hover {
+.button:hover { /*Animación botón banner*/
     color: #ffffff;
     background-color: #005387;
     border-radius: 10 px;
 }
+/*//////End Banner//////*/
 
-/*    End Banner    */
-
-.container {
-    width: 70vw;
+.container { /*Contenedor del section*/
     justify-content: center;
+    width: 70vw;
     margin: 0 auto;
 }
 
-/*   Contenedor de items   */
-.grid-container {
+/*//////Contenedor de items//////*/
+.grid-container { /*Contenedor global de productos*/
     display: grid;
     justify-content: space-around;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 2%;
 }
 
-.grid-container .grid-item {
+.grid-container .grid-item { /*Contenedor del producto*/
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
+    margin-bottom: 20px;
 }
 
-.grid-item .grid-img {
+.grid-item .grid-img { /*Contenedor imagen producto*/
     display: flex;
+    position: relative;
     align-items: flex-end;
     justify-content: flex-end;
-    position: relative;
 }
 
-.grid-item .pre {
+.grid-item .pre { /*Precio*/
     position: absolute;
     border-bottom-right-radius: 20px;
     padding: 15px 25px;
@@ -172,20 +170,20 @@
 }
 
 .adidas .grid-img .produ,
-.nike .grid-img .produ {
+.nike .grid-img .produ { /*Imagen Producto*/
     width: 100%;
     border-bottom-right-radius: 21px;
 }
 
-.adidas .grid-img .produ {
+.adidas .grid-img .produ { /*Sombra Imagen Producto (ADIDAS)*/
     box-shadow: 5px 5px #575757;
 }
 
-.nike .grid-img .produ {
+.nike .grid-img .produ { /*Sombra Imagen Producto (NIKE)*/
     box-shadow: 5px 5px #ffffff;
 }
 
-.grid-img .grid-logo {
+.grid-img .grid-logo { /*Contenedor Logo*/
     display: flex;
     position: absolute;
     justify-content: center;
@@ -199,16 +197,23 @@
     transition: all .5s;
 }
 
-.grid-img .grid-logo:hover {
-    opacity: .8;
-}
-
-.grid-img .grid-logo img {
+.grid-img .grid-logo img { /*Imagen logo*/
     width: 70%;
 }
 
+.adidas .grid-item h2,
+.nike .grid-item h2 { /*Título producto*/
+    font-size: 20px;
+    text-align: center;
+    margin: 3%;
+}
+
+.nike .grid-item h2 { /*Color título producto (NIKE)*/
+    color: white;
+}
+
 .adidas .grid-item .buy,
-.nike .grid-item .buy {
+.nike .grid-item .buy { /*Botón Comprar*/
     width: 50%;
     text-align: center;
     border-top-left-radius: 20px;
@@ -219,68 +224,61 @@
     transition: all .5;
 }
 
-.adidas .grid-item .buy {
+.adidas .grid-item .buy { /*Colores botón comprar (ADIDAS)*/
     background-color: #2a2a2a;
     color: #ffffff;
     box-shadow: 5px 5px #d40000;
 }
 
-.nike .grid-item .buy {
+.nike .grid-item .buy { /*Colores botón comprar (NIKE)*/
     background-color: #ffffff;
     color: #282828;
     box-shadow: 5px 5px #23b9ff;
 }
 
-.adidas .grid-item .buy:hover {
+.grid-img .grid-logo:hover { /*Animación logo Hover*/
+    opacity: .8;
+}
+
+.adidas .grid-item .buy:hover { /*Animación botón comprar (ADIDAS)*/
     background-color: #005ccd;
     box-shadow: 5px 5px #000000;
 }
 
-.nike .grid-item .buy:hover {
+.nike .grid-item .buy:hover { /*Animación botón comprar (NIKE)*/
     background-color: #005ccd;
     color: white;
     box-shadow: 5px 5px #ffffff;
 }
+/*//////End Contenedor de items//////*/
 
-.adidas .grid-item h2,
-.nike .grid-item h2 {
-    font-size: 20px;
-    text-align: center;
-    margin: 3%;
-}
-
-.nike .grid-item h2 {
-    color: white;
-}
-/*   End Contenedor de items   */
-
-.nike {
-    padding: 1%;
-    background: url('../img/wallpapers/nikewall.jpg');
-    width: 100%;
-}
-
-.adidas {
+.adidas { /*Fondo section Adidas*/
     padding: 1%;
     background: url('../img/wallpapers/adiwall.jpg');
     width: 100%;
 }
 
+.nike { /*Fondo section Nike*/
+    padding: 1%;
+    background: url('../img/wallpapers/nikewall.jpg');
+    width: 100%;
+}
+
 .adidas h1,
-.nike h1 {
+.nike h1 { /*Título section*/
     padding-top: 10px;
     text-align: center;
     font-size: 30px;
 }
 
-.nike h1 {
+.nike h1 { /*color título section nike*/
     color: white;
 }
 
-/*  Responsive Design  */
+/*//////Responsive Design//////*/
 @media screen and (max-width: 640px) {
 
-    /*    Start Menu    */
+    /*//////Start Menu//////*/
     #menu .logo {
         width: 60%;
         justify-content: center;
@@ -295,7 +293,7 @@
         display: flex;
         width: 20%;
     }
-    /*    End Menu    */
+    /*//////End Menu//////*/
 
     #banner_tittle h1 {
         text-align: center;
@@ -309,21 +307,27 @@
         width: 100%;
     }
 
-    /*   Contenedor de items   */
+    .adidas .container h1,
+    .nike .container h1 {
+        margin: 10px;
+        text-align: center;
+        font-size: 25px;
+    }
 
+    /*//////Contenedor de items//////*/
     .grid-container {
         justify-content: center;
         grid-template-columns: repeat(2, 45%);
     }
 
-    .adidas .grid-item h2,
-    .nike .grid-item h2 {
-        font-size: 15px;
-    }
-
     .grid-item .pre {
         padding: 5px 15px;
         font-size: 12px;
+    }
+
+    .adidas .grid-item h2,
+    .nike .grid-item h2 {
+        font-size: 15px;
     }
 
     .adidas .grid-item .buy,
@@ -342,13 +346,6 @@
         box-shadow: 2px 2px #23b9ff;
     }
 
-    .adidas .container h1,
-    .nike .container h1 {
-        margin: 10px;
-        text-align: center;
-        font-size: 25px;
-    }
-
     .adidas .grid-item .buy:hover {
         box-shadow: 2px 2px #000000;
     }
@@ -357,7 +354,7 @@
         box-shadow: 2px 2px #ffffff;
     }
 
-    /*   End Contenedor de items   */
+    /*//////End Contenedor de items//////*/
 }
 
 @media screen and (min-width: 640px) and (max-width: 1280px) {
@@ -371,12 +368,7 @@
         height: 30%;
     }
 
-    /*   Contenedor de items   */
-    .adidas .grid-item h2,
-    .nike .grid-item h2 {
-        font-size: 15px;
-    }
-
+    /*//////Contenedor de items//////*/
     .grid-item .pre {
         padding: 5px 15px;
         font-size: 12px;
@@ -399,5 +391,9 @@
         box-shadow: 2px 2px #23b9ff;
     }
 
-    /*   End Contenedor de items   */
+    .adidas .grid-item h2,
+    .nike .grid-item h2 {
+        font-size: 15px;
+    }
+    /*//////End Contenedor de items//////*/
 }
