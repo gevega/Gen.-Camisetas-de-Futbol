@@ -47,7 +47,7 @@
 
 #menu .logo-menu { /*Logos menú*/
     display: inline-flex;
-    height: 80%;
+    height: 60%;
     margin-right: 10px;
 }
 
@@ -167,7 +167,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px;
+    margin: 15px;
 }
 
 .grid-item .grid-img { /*Contenedor imagen producto*/
@@ -193,11 +193,11 @@
     border-bottom-right-radius: 21px;
 }
 
-.adidas .grid-img .produ { /*Sombra Imagen Producto (ADIDAS)*/
+.adidas .grid-img .produ { /*Sombra Imagen Producto (Adidas)*/
     box-shadow: 5px 5px #575757;
 }
 
-.nike .grid-img .produ { /*Sombra Imagen Producto (NIKE)*/
+.nike .grid-img .produ { /*Sombra Imagen Producto (Nike)*/
     box-shadow: 5px 5px #ffffff;
 }
 
@@ -284,7 +284,7 @@
 
 .adidas h1,
 .nike h1 { /*Título section*/
-    padding-top: 10px;
+    padding: 10px;
     text-align: center;
     font-size: 30px;
 }
@@ -292,6 +292,46 @@
 .nike h1 { /*color título section nike*/
     color: white;
 }
+
+/*//////Footer//////*/
+
+#footer {
+    background-color: #212121;
+}
+
+#footer .biglogo-footer {
+    width: 40%;
+}
+
+#footer .logo-footer {
+    width: 10%;
+}
+
+#footer .grid-container {
+    grid-template-columns: repeat(3, 1fr) !important;
+    border-bottom: 2px solid #cdcdcd !important;
+}
+
+#footer .grid-item {
+    flex-direction: row !important;
+    justify-content: center !important;
+    grid-gap: 5% !important;
+}
+
+#footer h1 {
+    color: #cdcdcd;
+    text-align: center;
+    font-size: 15px;
+    padding: 20px;
+}
+
+#footer h2 {
+    color: #cdcdcd;
+    text-align: justify;
+    font-size: 15px;
+    padding: 20px;
+}
+/*//////End Footer//////*/
 
 /*//////Responsive Design//////*/
 @media screen and (max-width: 640px) {
@@ -373,6 +413,30 @@
     }
 
     /*//////End Contenedor de items//////*/
+
+    #footer .grid-container {
+        grid-template-columns: repeat(2, 1fr) !important;
+        border-bottom: 2px solid #cdcdcd !important;
+    }
+    
+    #footer .biglogo-footer {
+        width: 40%;
+    }
+
+    #footer .logo-footer {
+        width: 15%;
+    }
+    #footer h1 {
+        color: #cdcdcd;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    #footer h2 {
+        color: #cdcdcd;
+        font-size: 10px;
+        padding: 5px;
+    }
 }
 
 @media screen and (min-width: 640px) and (max-width: 1280px) {
@@ -427,4 +491,9 @@
         font-size: 15px;
     }
     /*//////End Contenedor de items//////*/
+    #footer h2 {
+        color: #cdcdcd;
+        font-size: 12px;
+        padding: 5px;
+    }
 }
