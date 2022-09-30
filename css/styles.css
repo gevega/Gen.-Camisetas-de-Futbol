@@ -215,8 +215,17 @@
     transition: all .5s;
 }
 
-.grid-img .grid-logo img { /*Imagen logo*/
+
+.grid-img .grid-logo .logo { /*Imagen logo*/
     width: 70%;
+    opacity: .8;
+    position: absolute;
+}
+.grid-img .grid-logo .gif { /*Imagen logo*/
+    width: 100%;
+    position: absolute;
+    opacity: .6;
+    border-bottom-right-radius: 21px;
 }
 
 .adidas .grid-item h2,
@@ -251,10 +260,11 @@
     background-color: #ffffff;
     color: #282828;
     box-shadow: 5px 5px #23b9ff;
+    transition: all .5;
 }
 
 .grid-img .grid-logo:hover { /*Animación logo Hover*/
-    opacity: .8;
+    opacity: 1;
 }
 
 .adidas .grid-item .buy:hover { /*Animación botón comprar (ADIDAS)*/
