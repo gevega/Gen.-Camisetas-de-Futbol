@@ -29,6 +29,10 @@
     height: 80%;
 }
 
+#hamburger, #menu-check {
+    display: none; 
+}
+
 #menu .items { /*Contenedor items menú*/
     display: flex;
     justify-content: center;
@@ -64,26 +68,6 @@
     text-decoration: none;
     color: white;
     transition: color 0.3s;
-}
-
-#menu .colapse-menu { /*Contenedor svg icono desplegable*/
-    display: none;
-    justify-content: flex-end;
-    align-items: center;
-    width: 10vw;
-    height: 100%;
-}
-
-#menu .colapse-menu .svg-icon { /*Contenedor icono desplegable*/
-    display: flex;
-    justify-content: flex-end;
-    width: 70%;
-    height: 100%;
-}
-
-#menu .colapse-menu .menu-icon { /*Color y tamaño icono desplegable*/
-    fill: white;
-    scale: 2;
 }
 
 #menu .items li:hover { /*Animación items menú*/
@@ -342,16 +326,82 @@
     #menu .logo {
         width: 60%;
         justify-content: center;
-        margin-left: 20%;
+        margin: 0 50%;
     }
 
     #menu .items {
         display: none;
     }
 
-    #menu .colapse-menu {
+    #menu-check:not(:checked) ~ div.items {  /*Menú hamburguesa*/
+        display: none;
+    }
+
+    #menu-check:checked ~ div.items {
+        display: block;
+    }
+    
+    #hamburger {
+        display: block;
+        color: white;
+        height: 100%;
+        font-weight: bold;
+        font-size: 2em;
+        padding-top: 1px;
+        position: absolute;
+        right: 5%;
+        z-index: 9999;
+    }
+
+    #menu-cerrar {
+        display: none;
+        padding: 3px;
+    }
+
+    #menu-check:checked ~ label #menu-abrir {
+        display:none;
+    }
+
+    #menu-check:checked ~ label #menu-cerrar {
+        display:block;
+    }
+
+    #menu .items ul {
+        position: absolute;
+        top: 50px;
+        right: 0;
+        flex-direction: column;
+        height: 400%;
+        width: 260px;
+        background-color: #2a2a2a;
+        border-top-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        box-shadow: 5px 5px #005ccd;
+        opacity: 0.9;
+    }
+
+    #menu .items li {
         display: flex;
-        width: 20%;
+        justify-content: flex-end;
+        height: 20%;
+        width: 80%;
+    }
+
+    #menu .logo-menu {
+        margin: 0px 25px 0px 15px;
+        order: 2;
+    }
+
+    #hamburger:hover {
+        transform: scale(90%);
+        text-shadow: 5px 5px 5px #212121;
+        cursor: pointer;
+    } 
+
+    #menu .items li:hover {
+        box-shadow: none;
+        border-bottom: 3px solid #005ccd;
+        border-bottom-right-radius: 20px;
     }
     /*//////End Menu//////*/
 
@@ -443,6 +493,10 @@
 
 @media screen and (min-width: 640px) and (max-width: 1140px) {
     /*//////Start Menú//////*/
+    #menu .logo {
+        width: 15vw;
+    }
+    
     #menu .items {
         width: 90vw;
         margin-left: 5px;
