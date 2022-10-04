@@ -27,6 +27,7 @@
 
 #menu .logo img { /*Logo*/
     height: 80%;
+    cursor: pointer;
 }
 
 #menu .colapse-menu {
@@ -60,13 +61,14 @@
     margin-right: 10px;
 }
 
-#menu .items li { /*Items li menú*/
+#menu .items li, .logo a { /*Items li menú*/
     display: inline-flex;
     justify-content: center;
     align-items: center;
     width: 20%;
     height: 100%;
     cursor: pointer;
+    transition: all 0.3s;
 }
 
 #menu .items a { /*Hipervínculos menú*/
@@ -76,9 +78,10 @@
 }
 
 #menu .items li:hover { /*Animación items menú*/
-    transform: scale(95%);
+    scale: 1.05;
     text-shadow: 5px 5px 5px #212121;
-    box-shadow: 0px 5px 0px -1px #005ccd;
+    border-bottom: solid 7px #005ccd;
+    background-color: #000a3879;
 }
 /*//////End Menu//////*/
 
