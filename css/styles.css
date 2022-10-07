@@ -566,7 +566,7 @@ nav .btn-cart {
     }
 }
 
-@media screen and (max-height: 550px){
+@media screen and (max-height: 720px){
     .cart-items{
         height: 80px;
     }
