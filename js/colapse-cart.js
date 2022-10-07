@@ -2,24 +2,29 @@ let cart = document.querySelector('nav')
 let colapse = document.getElementById('colapse-cart')
 let menu = document.getElementById('items')
 let vw = document.documentElement.clientWidth
-let vh = document.documentElement.clientHeight
 
 loadEventLis()
 function loadEventLis() {
     cart.addEventListener('click', show_cart)
+    window.addEventListener('resize', normalizeNav)
 }
 
 function show_cart(e) {
+    vw = document.documentElement.clientWidth
+
     if (e.target.classList.contains('cart')) {
         if (colapse.style.display == "flex") {
             colapse.style.display = 'none'
             console.log('Ocultar')
         } else {
-            colapse.style.display = 'flex'
-            if (vw <= 640) {
+            if(vw<=1140){
+                colapse.style.display = 'flex'
                 menu.style.display = 'none'
-            } else { menu.style.display = 'flex' }
-            console.log('Mostrar')
+            } else {
+                colapse.style.display = 'flex'
+                menu.style.display = 'flex'
+            }
+            
         }
     }
 
@@ -35,12 +40,11 @@ function show_cart(e) {
     }
 }
 
-/*function normalizeHTML() {
+function normalizeNav() {
     vw = document.documentElement.clientWidth
-    vh = document.documentElement.clientHeight
-    if (vw >= 640 || vh >= 1140) {
+    if (vw > 1140) {
         menu.style.display = 'flex'
     } else {
         menu.style.display = 'none'
     }
-}*/
+}
