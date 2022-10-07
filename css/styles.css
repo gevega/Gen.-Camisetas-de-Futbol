@@ -17,7 +17,7 @@
     box-shadow: 0px 5px 10px black;
 }
 
-#menu .logo { /*Contenedor logo*/
+#menu .logo, #menu .cart_logo { /*Contenedor logo*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,17 +28,17 @@
 #menu .logo img { /*Logo*/
     height: 80%;
     cursor: pointer;
-}
+} 
 
-#menu .colapse-menu {
-    width: 20vw;
-}
+#menu .cart_logo img, #menu .cart_logo a {height: 100%;}
 
-#hamburger, #menu-check {
+#menu .menu_colapse {
     display: none;
+    width: 20vw;
+    height: 100%;
 }
 
-#menu-abrir .svg-icon, #menu-cerrar .svg-icon {
+#menu .svg-icon {
     height: 100%;
 }
 
@@ -76,6 +76,79 @@
     color: white;
     transition: color 0.3s;
 }
+
+.colapse-cart {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    opacity: .95;
+    top: 50px;
+    left: 80%;
+    width: 20%;
+    background-color: #2f2f2f;
+    box-shadow: -5px 5px #007cc4;
+} .colapse-cart h2 { text-align: center; color: #ffffff; padding: 10px;}
+.colapse-cart h4, .colapse-cart h5, .colapse-cart h6{color: #ffffff;}
+
+.colapse-cart .item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    margin-bottom: 10px;
+    border-bottom: 4px solid #007cc4;
+}
+
+.tittle {
+    width: 100%;
+    padding: 10px;
+    border-bottom: 2px solid #0061b5;
+    margin-bottom: 20px;
+}
+
+.colapse-cart .logo-item {
+    width: 20%;
+    align-items: center;
+} .colapse-cart img {width: 100%;}
+
+.colapse-cart .info-item {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    align-items: center;
+}
+
+nav .btn-cart {
+    background-color: #0088e9;
+    border-radius: 20px;
+    text-align: center;
+    color: #ffffff;
+    padding: 15px 25px;
+    font-size: 16px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.button-cart {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 10px;
+}
+
+.cart-items {
+    display: block;
+    width: 95%;
+    max-height: 300px;
+    overflow-y: none;
+    overflow-y: auto;
+}
+
+.remove {
+    width: 20%;
+} .remove img {cursor: pointer;}
 
 #menu .items li:hover { /*Animación items menú*/
     scale: 1.05;
@@ -137,7 +210,7 @@
     cursor: pointer;
 }
 
-.button:hover { /*Animación botón banner*/
+.button:hover, nav .btn-cart:hover { /*Animación botón banner*/
     color: #ffffff;
     background-color: #005387;
     scale: 1.1;
@@ -245,7 +318,7 @@
     transition: all .2s;
 }
 
-.adidas .grid-item .buy { /*Colores botón comprar (ADIDAS)*/
+.adidas .grid-item .buy{ /*Colores botón comprar (ADIDAS)*/
     background-color: #2a2a2a;
     color: #ffffff;
     box-shadow: 5px 5px #d40000;
@@ -344,46 +417,21 @@
 
     /*//////Start Menu//////*/
     #menu .logo {
-        width: 100%;
+        position: absolute;
+        width: 60%;
         justify-content: center;
-        margin: 0 50%;
-    }
-
-    #menu .logo img {
-        transform: translate(-50%, 0);
+        margin-left: 20%;
     }
 
     #menu .items {
         display: none;
     }
 
-    #menu-check:not(:checked) ~ div.items {  /*Menú hamburguesa*/
-        display: none;
-    }
-
-    #menu-check:checked ~ div.items {
-        display: block;
-    }
-    
-    #hamburger {
-        display: block;
-        height: 100%;
+    #menu .menu_colapse{
+        display: flex;
+        justify-content: center;
         position: absolute;
-        right: 5%;
-        z-index: 20;
-    }
-
-    #menu-cerrar {
-        display: none;
-    }
-
-    #menu-check:checked ~ label #menu-abrir {
-        display:none;
-    }
-
-    #menu-check:checked ~ label #menu-cerrar {
-        display:block;
-        height: 100%;
+        right: 0;
     }
 
     #menu .items ul {
@@ -410,6 +458,16 @@
     #menu .logo-menu {
         margin: 0px 25px 0px 15px;
         order: 2;
+    }
+
+    .cart_logo {
+        left: 4%;
+        position: absolute;
+    }
+
+    .colapse-cart {
+        left: 0px;
+        width: 100%;
     }
 
     #hamburger:hover {
@@ -511,26 +569,69 @@
 @media screen and (min-width: 640px) and (max-width: 1140px) {
     /*//////Start Menú//////*/
     #menu .logo {
-        width: 15vw;
+        position: absolute;
+        width: 60%;
+        justify-content: center;
+        margin-left: 20%;
     }
-    
+
     #menu .items {
-        width: 90vw;
-        margin-left: 5px;
+        display: none;
+    }
+
+    #menu .menu_colapse{
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        right: 0;
+    }
+
+    #menu .items ul {
+        position: absolute;
+        top: 50px;
+        right: 0;
+        flex-direction: column;
+        height: 500%;
+        width: 260px;
+        background-color: #2a2a2a;
+        border-top-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        box-shadow: 5px 5px #005ccd;
+        opacity: 0.9;
+    }
+
+    #menu .items li {
+        display: flex;
+        justify-content: flex-end;
+        height: 20%;
+        width: 80%;
     }
 
     #menu .logo-menu {
-        margin-right: 10px;
-        margin-left: 15px;
-    }
-    
-    #menu .items li {
-        width: 25%;
+        margin: 0px 25px 0px 15px;
+        order: 2;
     }
 
-    #menu .items a {
-        font-size: 15px;
-        margin-right: 15px;
+    .cart_logo {
+        left: 4%;
+        position: absolute;
+    }
+
+    .colapse-cart {
+        left: 0px;
+        width: 50%;
+    }
+
+    #hamburger:hover {
+        transform: scale(90%);
+        text-shadow: 5px 5px 5px #212121;
+        cursor: pointer;
+    } 
+
+    #menu .items li:hover {
+        box-shadow: none;
+        border-bottom: 3px solid #005ccd;
+        border-bottom-right-radius: 20px;
     }
     
     .container {

@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet">
-    <script defer src="js/cart.js" ></script>
+    <script defer src="js/cart.js"></script>
     <script defer src="js/colapse-cart.js"></script>
     <link rel="icon" href="img/menu/icono.ico">
     <title>Document</title>
@@ -22,13 +22,14 @@
                 <a href="index.html"><img src="img/menu/adidas.png" alt="Logo"></a>
             </div>
 
+            <!--
             <input type="checkbox" id="menu-check">
             <label id="hamburger" for="menu-check">
                 <span id="menu-abrir"><img src="img/svg/colapse-menu.svg" alt="" class="svg-icon"></span>
                 <span id="menu-cerrar"><img src="img/svg/colapse-menu-close.svg" alt="" class="svg-icon"></span>
-            </label>
+            </label>-->
 
-            <div class="items">
+            <div id="items" class="items">
                 <ul>
                     <li>
                         <img src="img/menu/qatar-logo.png" alt="Logo Qatar" class="logo-menu">
@@ -49,8 +50,26 @@
                 </ul>
             </div>
 
-            <div class="logo">
-                <a><img src="img/svg/cart.svg" alt="Logo" class="cart"></a>
+            <div class="menu_colapse">
+                <img src="img/svg/colapse-menu.svg" alt="" class="svg-icon">
+            </div>
+
+            <div class="cart_logo">
+                <a>
+                    <img src="img/svg/cart.svg" alt="Logo" class="cart">
+                </a>
+            </div>
+
+            <div id="colapse-cart" class="colapse-cart">
+                <div class="tittle">
+                    <h2>Mis Productos</h1>
+                </div>
+                <div id="cart-items" class="cart-items">
+                </div>
+                <h2 class="total">Total: $0</h2>
+                <div class="button-cart">
+                    <a class="btn-cart">Comprar</a>
+                </div>
             </div>
         </nav>
     </header>
@@ -76,7 +95,10 @@
                                 <img src="img/logo/ale-logo.png" alt="ALEMANIA 2022" class="logo">
                             </div>
                             <img src="img/product/ale22.jpg" alt="ALEMANIA 2022" class="produ">
-                            <div class="pre">$24.000</div>
+                            <div class="pre">
+                                <span>$</span>
+                                <span class="precio">24000</span>
+                            </div>
                         </div>
                         <h2>ALEMANIA 2022</h2>
                         <a class="buy" data-id="0">COMPRAR</a>
@@ -89,7 +111,10 @@
                                 <img src="img/logo/esp-logo.png" alt="ESPAÑA 2022" class="logo">
                             </div>
                             <img src="img/product/esp22.jpg" alt="ESPAÑA 2022" class="produ">
-                            <div class="pre">$24.000</div>
+                            <div class="pre">
+                                <span>$</span>
+                                <span class="precio">24000</span>
+                            </div>
                         </div>
                         <h2>ESPAÑA 2022</h2>
                         <a class="buy" data-id="1">COMPRAR</a>
@@ -102,10 +127,13 @@
                                 <img src="img/logo/arg-logo.png" alt="ARGENTINA 2022" class="logo">
                             </div>
                             <img src="img/product/arg22.jpg" alt="ARGENTINA 2022" class="produ">
-                            <div class="pre">$24.000</div>
+                            <div class="pre">
+                                <span>$</span>
+                                <span class="precio">24000</span>
+                            </div>
                         </div>
                         <h2>ARGENTINA 2022</h2>
-                        <div class="buy">COMPRAR</div>
+                        <div class="buy" data-id="2">COMPRAR</div>
                     </div>
 
                     <div class="grid-item">
@@ -114,10 +142,13 @@
                                 <img src="img/logo/bel-logo.png" alt="BELGICA 2022" class="logo">
                             </div>
                             <img src="img/product/BEL22.jpg" alt="BELGICA 2022" class="produ">
-                            <div class="pre">$24.000</div>
+                            <div class="pre">
+                                <span>$</span>
+                                <span class="precio">24000</span>
+                            </div>
                         </div>
                         <h2>BÉLGICA 2022</h2>
-                        <div class="buy">COMPRAR</div>
+                        <div class="buy" data-id="3">COMPRAR</div>
                     </div>
 
                 </div>
@@ -133,10 +164,13 @@
                                 <img src="img/logo/eng-logo.png" alt="INGLATERRA 2022" class="logo">
                             </div>
                             <img src="img/product/eng22.jpg" alt="INGLATERRA 2022" class="produ">
-                            <div class="pre">$24.000</div>
+                            <div class="pre">
+                                <span>$</span>
+                                <span class="precio">24000</span>
+                            </div>
                         </div>
                         <h2>INGLATERRA 2022</h2>
-                        <div class="buy">COMPRAR</div>
+                        <div class="buy" data-id="4">COMPRAR</div>
                     </div>
 
                     <div class="grid-item">
@@ -145,10 +179,13 @@
                                 <img src="img/logo/fra-logo.png" alt="FRANCIA 2022" class="logo">
                             </div>
                             <img src="img/product/fra22.jpg" alt="FRANCIA 2022" class="produ">
-                            <div class="pre">$24.000</div>
+                            <div class="pre">
+                                <span>$</span>
+                                <span class="precio">24000</span>
+                            </div>
                         </div>
                         <h2>FRANCIA 2022</h2>
-                        <div class="buy">COMPRAR</div>
+                        <div class="buy" data-id="5">COMPRAR</div>
                     </div>
 
                     <div class="grid-item">
@@ -157,10 +194,13 @@
                                 <img src="img/logo/bra-logo.png" alt="BRASIL 2022" class="logo">
                             </div>
                             <img src="img/product/bra22.jpg" alt="BRASIL 2022" class="produ">
-                            <div class="pre">$24.000</div>
+                            <div class="pre">
+                                <span>$</span>
+                                <span class="precio">24000</span>
+                            </div>
                         </div>
                         <h2>BRASIL 2022</h2>
-                        <div class="buy">COMPRAR</div>
+                        <div class="buy" data-id="6">COMPRAR</div>
                     </div>
 
                     <div class="grid-item">
@@ -169,10 +209,13 @@
                                 <img src="img/logo/por-logo.png" alt="PORTUGAL 2022" class="logo">
                             </div>
                             <img src="img/product/por22.jpg" alt="PORTUGAL 2022" class="produ">
-                            <div class="pre">$24.000</div>
+                            <div class="pre">
+                                <span>$</span>
+                                <span class="precio">24000</span>
+                            </div>
                         </div>
                         <h2>PORTUGAL 2022</h2>
-                        <div class="buy">COMPRAR</div>
+                        <div class="buy" data-id="7">COMPRAR</div>
                     </div>
                 </div>
             </div>
