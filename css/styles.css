@@ -13,7 +13,7 @@
     width: 100%;
     height: 50px;
     z-index: 5;
-    background: linear-gradient(to right, #212121, #0061b5);
+    background: linear-gradient(to right, #001f35, #005eb0);
     box-shadow: 0px 5px 10px black;
 }
 
@@ -87,10 +87,10 @@
     top: 50px;
     left: 80%;
     width: 20%;
-    background-color: #2f2f2f;
-    box-shadow: -5px 5px #007cc4;
+    background-color: #001f35;
+    box-shadow: -5px 5px 5px #007cc4;
 } .colapse-cart h2 { text-align: center; color: #ffffff; padding: 10px;}
-.colapse-cart h4, .colapse-cart h5, .colapse-cart h6{color: #ffffff;}
+.colapse-cart h4, .colapse-cart h5, .colapse-cart h6{color: #ffffff; text-align: center;}
 
 .item {
     display: flex;
@@ -236,7 +236,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 15px;
+    padding: 15px;
 }
 
 .grid-item .grid-img { /*Contenedor imagen producto*/
@@ -249,24 +249,18 @@
 .grid-item .pre { /*Precio*/
     position: absolute;
     padding: 15px 25px;
-    background-color: #363636;
+    background-color: #111111;
     color: #ffffff;
     font-size: 16px;
     opacity: .9;
 }
 
-.adidas .grid-img .produ,
-.nike .grid-img .produ { /*Imagen Producto*/
+.section .grid-img .produ { /*Imagen Producto*/
     width: 100%;
-    border-top-left-radius: 21px;
 }
 
-.adidas .produ { /*Sombra Imagen Producto (Adidas)*/
-    box-shadow: 5px 5px #575757;
-}
-
-.nike .produ { /*Sombra Imagen Producto (Nike)*/
-    box-shadow: 5px 5px #ffffff;
+.section .produ { /*Sombra Imagen Producto*/
+    box-shadow: 5px 5px 3px #005c9e;
 }
 
 .grid-img .grid-logo { /*Contenedor Logo*/
@@ -278,7 +272,6 @@
     height: 100%;
     background-color: black;
     z-index: 4;
-    border-top-left-radius: 21px;
     opacity: 0;
     transition: all .5s;
 }
@@ -293,90 +286,57 @@
     width: 100%;
     position: absolute;
     opacity: .6;
-    border-top-left-radius: 21px;
 }
 
-.adidas .grid-item h2,
-.nike .grid-item h2 { /*Título producto*/
-    font-size: 20px;
+.section .grid-item h2 { /*Título producto*/
+    font-size: 19px;
     text-align: center;
+    color: #002743;
     margin: 3%;
 }
 
-.nike .grid-item h2 { /*Color título producto (NIKE)*/
-    color: white;
-}
-
-.adidas .grid-item .buy,
-.nike .grid-item .buy { /*Botón Comprar*/
+.section .grid-item .buy { /*Botón Comprar*/
     text-align: center;
-    border-top-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    background-color: #00243e;
+    color: #ffffff;
+    box-shadow: 5px 5px #0062d1;
     padding: 15px 25px;
     font-size: 14px;
     cursor: pointer;
     transition: all .2s;
 }
 
-.adidas .grid-item .buy{ /*Colores botón comprar (ADIDAS)*/
-    background-color: #2a2a2a;
-    color: #ffffff;
-    box-shadow: 5px 5px #d40000;
-}
-
-.nike .grid-item .buy { /*Colores botón comprar (NIKE)*/
-    background-color: #ffffff;
-    color: #282828;
-    box-shadow: 5px 5px #23b9ff;
-    transition: all .5;
+.section .grid-container .grid-item:hover{
+    border: 1px solid #002743 !important;
 }
 
 .grid-img .grid-logo:hover { /*Animación logo Hover*/
-    opacity: 1;
+    opacity: .8;
 }
 
-.adidas .grid-item .buy:hover { /*Animación botón comprar (ADIDAS)*/
+.section .grid-item .buy:hover { /*Animación botón comprar (ADIDAS)*/
     background-color: #005ccd;
     box-shadow: 5px 5px #000000;
     scale: 1.1;
 }
-
-.nike .grid-item .buy:hover { /*Animación botón comprar (NIKE)*/
-    background-color: #005ccd;
-    color: white;
-    box-shadow: 5px 5px #ffffff;
-    scale: 1.1;
-}
 /*//////End Contenedor de items//////*/
 
-.adidas { /*Fondo section Adidas*/
-    padding: 1%;
-    background: url('../img/wallpapers/adiwall.jpg');
+.section { /*Fondo section Adidas*/
     width: 100%;
+    padding: 1%;
+    padding-top: 60px;
 }
 
-.nike { /*Fondo section Nike*/
-    padding: 1%;
-    background: url('../img/wallpapers/nikewall.jpg');
-    width: 100%;
-}
-
-.adidas h1,
-.nike h1 { /*Título section*/
+.section h1 { /*Título section*/
     padding: 10px;
     text-align: center;
+    color: #002743;
     font-size: 30px;
-    border-bottom: 3px solid rgb(30, 30, 30);
-}
-
-.nike h1 { /*color título section nike*/
-    border-bottom: 3px solid #ffffff !important;
-    color: rgb(225, 225, 225);
+    border-bottom: 3px solid #002743;
 }
 
 .buy-form{
     width: 100%;
-    /*height: 100vh;*/
     padding-top: 50px;
 }
 
@@ -410,10 +370,14 @@
     color: #3f3f3f;
 }
 
+#buyitems {
+    grid-template-columns: repeat(6, 1fr) !important;
+} 
 /*//////Footer//////*/
 
 #footer {
-    background-color: #212121;
+    background-color: #001e34;
+    margin-top: 40px;
 }
 
 #footer .biglogo-footer {
@@ -479,11 +443,9 @@
         flex-direction: column;
         height: 500%;
         width: 260px;
-        background-color: #2a2a2a;
-        border-top-left-radius: 20px;
-        border-bottom-right-radius: 20px;
+        background-color: #001f35;
         box-shadow: 5px 5px #005ccd;
-        opacity: 0.9;
+        opacity: 0.95;
     }
 
     #menu .items li {
@@ -508,18 +470,6 @@
         width: 100%;
         overflow-y: auto;
     }
-
-    #hamburger:hover {
-        transform: scale(90%);
-        text-shadow: 5px 5px 5px #212121;
-        cursor: pointer;
-    } 
-
-    #menu .items li:hover {
-        box-shadow: none;
-        border-bottom: 3px solid #005ccd;
-        border-bottom-right-radius: 20px;
-    }
     /*//////End Menu//////*/
 
     #banner_tittle h1 {
@@ -534,8 +484,7 @@
         width: 100%;
     }
 
-    .adidas .container h1,
-    .nike .container h1 {
+    .section .container h1 {
         margin: 10px;
         text-align: center;
         font-size: 25px;
@@ -552,35 +501,21 @@
         font-size: 12px;
     }
 
-    .adidas .grid-item h2,
-    .nike .grid-item h2 {
+    .section .grid-item h2 {
         font-size: 15px;
     }
 
-    .adidas .grid-item .buy,
-    .nike .grid-item .buy {
+    .section .grid-item .buy {
         padding: 5px 15px;
         font-size: 10px;
         border-top-left-radius: 10px;
         border-bottom-right-radius: 10px;
-    }
-
-    .adidas .grid-item .buy {
         box-shadow: 2px 2px #d40000;
     }
 
-    .nike .grid-item .buy {
-        box-shadow: 2px 2px #23b9ff;
-    }
-
-    .adidas .grid-item .buy:hover {
+    .section .grid-item .buy:hover {
         box-shadow: 2px 2px #000000;
     }
-
-    .nike .grid-item .buy:hover {
-        box-shadow: 2px 2px #ffffff;
-    }
-
     /*//////End Contenedor de items//////*/
 
     #footer .grid-container {
@@ -642,11 +577,9 @@
         flex-direction: column;
         height: 500%;
         width: 260px;
-        background-color: #2a2a2a;
-        border-top-left-radius: 20px;
-        border-bottom-right-radius: 20px;
+        background-color: #001f35;
         box-shadow: 5px 5px #005ccd;
-        opacity: 0.9;
+        opacity: 0.95;
     }
 
     #menu .items li {
@@ -671,16 +604,8 @@
         width: 50%;
     }
 
-    #hamburger:hover {
-        transform: scale(90%);
-        text-shadow: 5px 5px 5px #212121;
-        cursor: pointer;
-    } 
-
     #menu .items li:hover {
-        box-shadow: none;
-        border-bottom: 3px solid #005ccd;
-        border-bottom-right-radius: 20px;
+        border-bottom: 5px solid #005ccd;
     }
     
     .container {
@@ -699,24 +624,15 @@
         font-size: 12px;
     }
 
-    .adidas .grid-item .buy,
-    .nike .grid-item .buy {
+    .section .grid-item .buy {
         padding: 5px 20px;
         font-size: 12px;
         border-top-left-radius: 10px;
         border-bottom-right-radius: 10px;
-    }
-
-    .adidas .grid-item .buy {
         box-shadow: 2px 2px #d40000;
     }
 
-    .nike .grid-item .buy {
-        box-shadow: 2px 2px #23b9ff;
-    }
-
-    .adidas .grid-item h2,
-    .nike .grid-item h2 {
+    .section .grid-item h2 {
         font-size: 15px;
     }
     /*//////End Contenedor de items//////*/

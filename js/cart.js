@@ -158,9 +158,19 @@ function readLocalStorage() {
                 <img src="img/svg/remove.svg" class="remove" data-id="${producto.id}" alt="">
             </div>
             `;
+            const produ = document.createElement('div')
+            produ.classList.add('grid-item')
+            produ.innerHTML = `
+                <div class="grid-img">
+                    <img src="${producto.imagen}" alt="" class="produ">
+                </div>
+                <h2>Cantidad: ${producto.cantidad}</h2>
+            `
             container.appendChild(fila)
 
-            //buyitems.appendChild(fila)
+            if(buyitems){
+                buyitems.appendChild(produ)
+            }
         })
         cart_logo(productos)
     }
