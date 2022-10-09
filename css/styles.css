@@ -92,7 +92,7 @@
 } .colapse-cart h2 { text-align: center; color: #ffffff; padding: 10px;}
 .colapse-cart h4, .colapse-cart h5, .colapse-cart h6{color: #ffffff;}
 
-.colapse-cart .item {
+.item {
     display: flex;
     align-items: center;
     width: 100%;
@@ -108,19 +108,19 @@
     margin-bottom: 20px;
 }
 
-.colapse-cart .logo-item {
+.logo-item {
     width: 20%;
     align-items: center;
 } .colapse-cart img {width: 100%;}
 
-.colapse-cart .info-item {
+.info-item {
     display: flex;
     flex-direction: column;
     width: 60%;
     align-items: center;
 }
 
-nav .btn-cart {
+.btn-cart {
     background-color: #0088e9;
     border-radius: 20px;
     text-align: center;
@@ -211,7 +211,7 @@ nav .btn-cart {
     cursor: pointer;
 }
 
-.button:hover, nav .btn-cart:hover { /*Animación botón banner*/
+.button:hover, .btn-cart:hover { /*Animación botón banner*/
     color: #ffffff;
     background-color: #005387;
     scale: 1.1;
@@ -366,10 +366,48 @@ nav .btn-cart {
     padding: 10px;
     text-align: center;
     font-size: 30px;
+    border-bottom: 3px solid rgb(30, 30, 30);
 }
 
 .nike h1 { /*color título section nike*/
-    color: white;
+    border-bottom: 3px solid #ffffff !important;
+    color: rgb(225, 225, 225);
+}
+
+.buy-form{
+    width: 100%;
+    /*height: 100vh;*/
+    padding-top: 50px;
+}
+
+.form {
+    display: grid;
+    justify-content: space-around;
+    justify-content: center;
+    margin-top: 30px;
+    grid-template-columns: repeat(2, 50%);
+}
+
+.row-grid {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+} .textarea {grid-column: 1 / span 2; height: 120px;}
+
+.form input, .form textarea{
+    width: 100%;
+    margin-left: 20px;
+    font-size: 25px;
+    color: #3f3f3f;
+    font-family: Arial, Helvetica, sans-serif;
+    resize: none;
+    -webkit-appearance: textfield !important;
+    -moz-appearance:textfield !important;
+}
+
+.form label h2{
+    font-size: 30px;
+    color: #3f3f3f;
 }
 
 /*//////Footer//////*/

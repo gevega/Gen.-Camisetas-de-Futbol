@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet">
+    <script defer src="js/cart.js"></script>
+    <script defer src="js/colapse-cart.js"></script>
     <link rel="icon" href="img/menu/icono.ico">
     <title>Document</title>
 </head>
@@ -20,13 +22,7 @@
                 <a href="index.html"><img src="img/menu/adidas.png" alt="Logo"></a>
             </div>
 
-            <input type="checkbox" id="menu-check">
-            <label id="hamburger" for="menu-check">
-                <span id="menu-abrir"><img src="img/svg/colapse-menu.svg" alt="" class="svg-icon"></span>
-                <span id="menu-cerrar"><img src="img/svg/colapse-menu-close.svg" alt="" class="svg-icon"></span>
-            </label>
-
-            <div class="items">
+            <div id="items" class="items">
                 <ul>
                     <li>
                         <img src="img/menu/qatar-logo.png" alt="Logo Qatar" class="logo-menu">
@@ -47,16 +43,69 @@
                 </ul>
             </div>
 
-            <div class="logo">
-                <a href="cart.html"><img src="img/svg/cart.svg" alt="Logo"></a>
+            <div class="menu_colapse">
+                <img src="img/svg/colapse-menu.svg" alt="" class="svg-icon">
+            </div>
+
+            <div class="cart_logo">
+                <a>
+                    <img src="img/svg/cart.svg" alt="Logo" class="cart">
+                </a>
+            </div>
+
+            <div id="colapse-cart" class="colapse-cart">
+                <div class="tittle">
+                    <h2>Mis Productos</h1>
+                </div>
+                <div id="cart-items" class="cart-items">
+                </div>
+                <h2 class="total">Total: $0</h2>
+                <div class="button-cart">
+                    <a class="btn-cart">Comprar</a>
+                </div>
             </div>
         </nav>
     </header>
+
     <main>
         <section class="adidas">
-            <div id="container" class="container">
-                
+            <div class="container">
+                <div class="buy-form">
+                    <h1 class="adidas">COMPRAME RATONAZO, AL MEJOR PRECIO</h1>
+                    <form action="" method="post" class="form">
+                        <div class="row-grid">
+                            <label for="name"><h2>Nombre:</h2></label>
+                            <input type="text" id="name" name="nameUser">
+                        </div>
+                        <div class="row-grid">
+                            <label for="surname"><h2>Apellidos:</h2></label>
+                            <input type="text" id="ape" name="apeUser">
+                        </div>
+                        <div class="row-grid">
+                            <label for="surname"><h2>Telefono:</h2></label>
+                            <input type="number" id="tel" name="telUser">
+                        </div>
+                        <div class="row-grid">
+                            <label for="mail"><h2>Mail:</h2></label>
+                            <input type="email" id="mail" name="mailUser">
+                        </div>
+                        <div class="row-grid textarea">
+                            <label for="msg"><h2>Mensaje:</h2></label>
+                            <textarea id="msg" name="msjUser"></textarea>
+                        </div>
+                    </form>
+                    <div class="container">
+                        <h1 class="adidas">Tus Productos</h1>
+                        <div id="buyitems" class="grid-container">
+                            
+                        </div>
+                    </div>
+                    <div class="button-cart">
+                        <a class="btn-cart"> Finalizar Comprar</a>
+                    </div>
+                </div>
             </div>
+        </section>
     </main>
 
     <footer>

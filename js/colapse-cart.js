@@ -15,7 +15,6 @@ function show_cart(e) {
     if (e.target.classList.contains('cart')) {
         if (colapse.style.display == "flex") {
             colapse.style.display = 'none'
-            console.log('Ocultar')
         } else {
             if(vw<=1140){
                 colapse.style.display = 'flex'
@@ -31,11 +30,9 @@ function show_cart(e) {
     if (e.target.classList.contains('svg-icon')) {
         if (menu.style.display == "flex") {
             menu.style.display = 'none'
-            console.log('Ocultar')
         } else {
             menu.style.display = 'flex'
             colapse.style.display = 'none'
-            console.log('Mostrar')
         }
     }
 }

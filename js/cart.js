@@ -1,6 +1,7 @@
 let produ = document.querySelector('body')
 let productos = []
 let container = document.querySelector('.cart-items')
+let buyitems = document.querySelector('#buyitems')
 let total = document.querySelector('.total')
 let totalcart = 0
 
@@ -8,6 +9,7 @@ loadEventList()
 function loadEventList() {
     produ.addEventListener('click', addPro)
     container.addEventListener('click', remove)
+    document.addEventListener('DOMContentLoaded', readLocalStorage())
 }
 
 function addPro(e) {
@@ -21,12 +23,12 @@ function addPro(e) {
 function remove(e) {
     if (e.target.classList.contains('remove')) {
         const idProdu = e.target.getAttribute('data-id')
-
         productos.forEach(value => {
             if (value.id == idProdu) {
                 let removePre = parseFloat(value.precio) * parseFloat(value.cantidad)
                 totalcart = totalcart - removePre
                 totalcart = totalcart.toFixed(0)
+                removeProdu(idProdu)
             }
         })
         productos = productos.filter(productos => productos.id != idProdu)
@@ -34,8 +36,10 @@ function remove(e) {
 
     if (productos.length == 0) {
         total.innerHTML = 'Total: $0'
-        totalcart=0 
-    } 
+        totalcart = 0
+        localStorage.setItem('productos', '')
+        localStorage.setItem('total', 0)
+    }
     loadHTML()
 }
 
@@ -65,7 +69,6 @@ function readContent(product) {
         productos = [...productos, infoProduct]
     }
     loadHTML()
-    //save_localstorage(infoProduct)
 }
 
 function loadHTML() {
@@ -89,23 +92,26 @@ function loadHTML() {
             `;
         container.appendChild(fila)
         total.innerHTML = 'Total: $' + totalcart
+        this.save_localstorage(productos)
     })
+    localStorage.setItem('total', totalcart)
 }
 
 function clearhtml() {
     container.innerHTML = ''
 }
 
-function cart_logo(productos){
+function cart_logo(productos) {
+    total.innerHTML = 'Total: $' + totalcart
     let cart = document.querySelector(".cart").parentElement.parentElement
-    if(productos.length != 0){
-        cart.innerHTML= `
+    if (productos.length != 0) {
+        cart.innerHTML = `
         <a>
             <img src="img/svg/cart-add.svg" alt="Logo" class="cart">
         </a>
         `
-    }else{
-        cart.innerHTML= `
+    } else {
+        cart.innerHTML = `
         <a>
             <img src="img/svg/cart.svg" alt="Logo" class="cart">
         </a>
@@ -113,9 +119,49 @@ function cart_logo(productos){
     }
 }
 
+function save_localstorage(producto) {
+    let productos = []
+    productos.push(producto)
+    localStorage.setItem('productos', JSON.stringify(productos))
+}
 
+function removeProdu(idProdu) {
+    let produLocal = JSON.parse(localStorage.getItem('productos'))
+    produLocal.forEach(function (produLocal, index) {
+        if (produLocal.id == idProdu) {
+            produLocal.splice(index, 1)
+        }
+    })
+    localStorage.setItem('productos', JSON.stringify(produLocal))
+}
 
+function readLocalStorage() {
+    if (localStorage.getItem('productos')) {
+        const produLocal = JSON.parse(localStorage.getItem('productos'))
+        const total = JSON.parse(localStorage.getItem('total'))
+        totalcart = totalcart + total
 
-/*function save_localstorage(infoProduct){ 
-    localStorage.setItem('Producto '+infoProduct.id, JSON.stringify(infoProduct))
-}*/
+        produLocal[0].forEach(producto => {
+            productos = [...productos, producto]
+            const fila = document.createElement('div')
+            fila.classList.add('item')
+            fila.innerHTML = `
+            <div class="logo-item">
+                <img src="${producto.imagen}" alt="">
+            </div>
+            <div class="info-item">
+                <h4>${producto.titulo}</h4>
+                <h5>Precio: ${producto.precio}</h3>
+                <h5>Cantidad: ${producto.cantidad}</h3>
+            </div>
+            <div class="remove">
+                <img src="img/svg/remove.svg" class="remove" data-id="${producto.id}" alt="">
+            </div>
+            `;
+            container.appendChild(fila)
+
+            //buyitems.appendChild(fila)
+        })
+        cart_logo(productos)
+    }
+}
