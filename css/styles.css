@@ -285,23 +285,9 @@
     position: absolute;
 }
 
-.grid-img .grid-logo .logoH { /*Imagen logo*/
-    width: 50%;
-    opacity: .8;
-    position: absolute;
-}
-
 .grid-img .grid-logo .gif { /*Imagen logo*/
     width: 100%;
     position: absolute;
-    opacity: .6;
-}
-
-.grid-img .grid-logo .gifXX { /*Imagen logo*/
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    opacity: .6;
 }
 
 .section .grid-item h2 { /*Título producto*/
@@ -327,8 +313,8 @@
 }
 
 .grid-img .grid-logo:hover { /*Animación logo Hover*/
-    opacity: .8;
-}
+    opacity: 1;
+} .noGif .grid-img .grid-logo:hover{opacity: .8; !important}
 
 .section .grid-item .buy:hover { /*Animación botón comprar (ADIDAS)*/
     background-color: #005ccd;
