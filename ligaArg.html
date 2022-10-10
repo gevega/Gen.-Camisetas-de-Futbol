@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet">
+    <script defer src="js/cart.js"></script>
+    <script defer src="js/colapse-cart.js"></script>
+    <link rel="icon" href="img/menu/icono.ico">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <nav id="menu">
+            <div class="logo">
+                <a href="index.html"><img src="img/menu/adidas.png" alt="Logo"></a>
+            </div>
+
+            <div id="items" class="items">
+                <ul>
+                    <li>
+                        <img src="img/menu/qatar-logo.png" alt="Logo Qatar" class="logo-menu">
+                        <a href="index.html#container">QATAR 2022</a>
+                    </li>
+                    <li>
+                        <img src="img/menu/lpf-logo.png" alt="Logo Liga" class="logo-menu">
+                        <a href="ligaArg.html">LIGA ARGENTINA</a>
+                    </li>
+                    <li>
+                        <img src="img/menu/premier-logo.png" alt="Logo Premier" class="logo-menu">
+                        <a href="premier.html">PREMIER LEAGUE</a>
+                    </li>
+                    <li>
+                        <img src="img/menu/contact-logo.png" alt="Logo Contacto" class="logo-menu">
+                        <a href="">CONTACTO</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="menu_colapse">
+                <img src="img/svg/colapse-menu.svg" alt="" class="svg-icon">
+            </div>
+
+            <div class="cart_logo">
+                <a>
+                    <img src="img/svg/cart.svg" alt="Logo" class="cart">
+                </a>
+            </div>
+
+            <div id="colapse-cart" class="colapse-cart">
+                <div class="tittle">
+                    <h2>Mis Productos</h1>
+                </div>
+                <div id="cart-items" class="cart-items">
+                </div>
+                <h2 class="total">Total: $0</h2>
+                <div class="button-cart">
+                    <a href="cart.html" class="btn-cart">Comprar</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section">
+            <div id="container" class="container">
+                <h1>LIGA PROFESIONAL ARGENTINA</h1>
+                <div id="grid-container" class="grid-container">
+                    <div class="grid-item">
+                        <div class="grid-img">
+                            <div class="grid-logo">
+                                <img src="img/logo/ligaArg/boca-logo.png" alt="escudo boca juniors" class="logo">
+                            </div>
+                            <img src="img/product/ligaArg/boca/benedeto_2.png" alt="benedeto con camiseta de boca" class="produ">
+                            <div class="pre">
+                                <span>$</span>
+                                <span class="precio">24000</span>
+                            </div>
+                        </div>
+                        <h2>BOCA JUNIORS</h2>
+                        <a class="buy" data-id="200">COMPRAR</a>
+                    </div>
+
+                    <div class="grid-item">
+                        <div class="grid-img">
+                            <div class="grid-logo">
+                                <img src="img/logo/ligaArg/river-logo.png" alt="escudo river plate" class="logo">
+                            </div>
+                            <img src="img/product/ligaArg/river/quinteros_2.png" alt="" class="produ">
+                            <div class="pre">
+                                <span>$</span>
+                                <span class="precio">24000</span>
+                            </div>
+                        </div>
+                        <h2>RIVER PLATE</h2>
+                        <a class="buy" data-id="201">COMPRAR</a>
+                    </div>
+
+                    <div class="grid-item notranslate">
+                        <div class="grid-img">
+                            <div class="grid-logo">
+                                <img src="img/logo/ligaArg/racing-logo.png" alt="escudo de racing club" class="logo">
+                            </div>
+                            <img src="img/product/ligaArg/racing/grupo.png" alt="jugadores de racing con camisetas" class="produ">
+                            <div class="pre">
+                                <span>$</span>
+                                <span class="precio">24000</span>
+                            </div>
+                        </div>
+                        <h2>RACING</h2>
+                        <a class="buy" data-id="202">COMPRAR</a>
+                    </div>
+
+                    <div class="grid-item">
+                        <div class="grid-img">
+                            <div class="grid-logo">
+                                <img src="img/logo/ligaArg/independiente-logo.png" alt="escudo independiente" class="logo">
+                            </div>
+                            <img src="img/product/ligaArg/independiente/camiseta_ind.jpg" alt="jugador de independiente con camiseta" class="produ">
+                            <div class="pre">
+                                <span>$</span>
+                                <span class="precio">24000</span>
+                            </div>
+                        </div>
+                        <h2>INDEPENDIENTE</h2>
+                        <a class="buy" data-id="203">COMPRAR</a>
+                    </div>
+
+                    <div class="grid-item">
+                        <div class="grid-img">
+                            <div class="grid-logo">
+                                <img src="img/logo/ligaArg/casla-logo.png" alt="ALEMANIA 2022" class="logo">
+                            </div>
+                            <img src="img/product/ligaArg/casla/cerruti_fondonegro.png" alt="Cerruti con camiseta de san lorenzo" class="produ">
+                            <div class="pre">
+                                <span>$</span>
+                                <span class="precio">24000</span>
+                            </div>
+                        </div>
+                        <h2>SAN LORENZO</h2>
+                        <a class="buy" data-id="204">COMPRAR</a>
+                    </div>
+
+                    <div class="grid-item">
+                        <div class="grid-img">
+                            <div class="grid-logo">
+                                <img src="img/logo/ligaArg/huracan-logo.png" alt="Escudo del club Huracan" class="logoH">
+                            </div>
+                            <img src="img/product/ligaArg/huracan/huracan.png" alt="Jugadora de huracan con camiseta" class="produ">
+                            <div class="pre">
+                                <span>$</span>
+                                <span class="precio">24000</span>
+                            </div>
+                        </div>
+                        <h2>HURACAN</h2>
+                        <a class="buy" data-id="205">COMPRAR</a>
+                    </div>
+
+                    <div class="grid-item">
+                        <div class="grid-img">
+                            <div class="grid-logo">
+                                <img src="img/logo/ligaArg/velez-logo.png" alt="Escudo del club velez" class="logo">
+                            </div>
+                            <img src="img/product/ligaArg/velez/pratto.jpg"  alt="Imagen de pratto con camiseta de velez" class="produ">
+                            <div class="pre">
+                                <span>$</span>
+                                <span class="precio">24000</span>
+                            </div>
+                        </div>
+                        <h2>VELEZ</h2>
+                        <a class="buy" data-id="206">COMPRAR</a>
+                    </div>
+
+                    <div class="grid-item">
+                        <div class="grid-img">
+                            <div class="grid-logo">
+                                <img src="img/logo/ligaArg/talleres-logo.png" alt="Escudo de telleres de cordoba" class="logo">
+                            </div>
+                            <img src="img/product/ligaArg/talleres/talleres.png" alt="mujeres en escalera con indumentaria de talleres" class="produ">
+                            <div class="pre">
+                                <span>$</span>
+                                <span class="precio">24000</span>
+                            </div>
+                        </div>
+                        <h2>TALLERES</h2>
+                        <a class="buy" data-id="207">COMPRAR</a>
+                    </div>
+                </div>
+            </section>
+    </main>
+
+    <footer>
+        <div id="footer">
+            <div class="container">
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, reprehenderit! Aspernatur
+                            sed modi vel consequatur saepe inventore ab obcaecati dolor.</h2>
+                    </div>
+                    <div class="grid-item">
+                        <img src="img/menu/adidas.png" alt="Logo" class="biglogo-footer">
+                    </div>
+                    <div class="grid-item">
+                        <img src="img/svg/fb.svg" alt="Instagram logo" class="logo-footer">
+                        <img src="img/svg/tw.svg" alt="Twitter logo" class="logo-footer">
+                        <img src="img/svg/gmail.svg" alt="Gmail logo" class="logo-footer">
+                    </div>
+                </div>
+                <h1>© Copyright 2022. Todos los derechos reservados. </h1>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
