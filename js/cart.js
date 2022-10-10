@@ -3,6 +3,7 @@ let productos = []
 let container = document.querySelector('.cart-items')
 let buyitems = document.querySelector('#buyitems')
 let total = document.querySelector('.total')
+//let cant = document.querySelector('.grid-container')
 let totalcart = 0
 
 loadEventList()
@@ -28,6 +29,14 @@ function remove(e) {
                 let removePre = parseFloat(value.precio) * parseFloat(value.cantidad)
                 totalcart = totalcart - removePre
                 totalcart = totalcart.toFixed(0)
+                if (value.cantidad > 0) {
+                    let cant = document.getElementById(idProdu)
+                    if(document.getElementById(idProdu)){
+                        cant.classList.replace('cantidad', 'noDisplay')
+                        cant.innerHTML = ''
+                    }
+                    
+                }
                 removeProdu(idProdu)
             }
         })
@@ -91,6 +100,18 @@ function loadHTML() {
             </div>
             `;
         container.appendChild(fila)
+        if (document.getElementById(id)) {
+            let cant = document.getElementById(id)
+            cant.classList.replace('noDisplay', 'cantidad');
+            const cant_row = document.createElement('div')
+            cant_row.innerHTML = `<div id="${id}" class="cant"><h1>${cantidad}</h1></div>`
+
+            if (cant.getAttribute('id') == id) {
+                cant.innerHTML = ''
+                cant.appendChild(cant_row)
+            }
+        }
+
         total.innerHTML = 'Total: $' + totalcart
         this.save_localstorage(productos)
     })
@@ -158,6 +179,15 @@ function readLocalStorage() {
                 <img src="img/svg/remove.svg" class="remove" data-id="${producto.id}" alt="">
             </div>
             `;
+
+            if (document.getElementById(producto.id)) {
+                let cant = document.getElementById(producto.id)
+                cant.innerHTML = `<div id="${producto.id}" class="cant"><h1>${producto.cantidad}</h1></div>`
+                if (producto.cantidad > 0) {
+                    cant.classList.replace('noDisplay', 'cantidad');
+                }
+            }
+
             const produ = document.createElement('div')
             produ.classList.add('grid-item')
             produ.innerHTML = `
@@ -168,7 +198,7 @@ function readLocalStorage() {
             `
             container.appendChild(fila)
 
-            if(buyitems){
+            if (buyitems) {
                 buyitems.appendChild(produ)
             }
         })
