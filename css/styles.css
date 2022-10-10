@@ -314,7 +314,7 @@
 
 .grid-img .grid-logo:hover { /*Animación logo Hover*/
     opacity: 1;
-} .noGif .grid-img .grid-logo:hover{opacity: .8; !important}
+} .noGif .grid-img .grid-logo:hover{opacity: .8 !important}
 
 .section .grid-item .buy:hover { /*Animación botón comprar (ADIDAS)*/
     background-color: #005ccd;
