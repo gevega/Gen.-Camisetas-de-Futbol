@@ -193,8 +193,9 @@ function readLocalStorage() {
             produ.innerHTML = `
                 <div class="grid-img">
                     <img src="${producto.imagen}" alt="" class="produ">
+                    <div id="200" class="cantidad">
+                    <div id="${producto.id}" class="cant"><h1>${producto.cantidad}</h1></div>
                 </div>
-                <h2>Cantidad: ${producto.cantidad}</h2>
             `
             container.appendChild(fila)
 

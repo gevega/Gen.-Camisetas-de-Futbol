@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
     text-decoration: none;
+    scroll-behavior: smooth;
 }
 
 /*//////Start Menu//////*/
@@ -132,7 +133,6 @@
 }
 
 .button-cart {
-    width: 100%;
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -316,6 +316,7 @@
 
 .section .grid-item .buy { /*Botón Comprar*/
     text-align: center;
+    position: relative;
     background-color: #00243e;
     color: #ffffff;
     box-shadow: 5px 5px #0062d1;
@@ -323,6 +324,12 @@
     font-size: 14px;
     cursor: pointer;
     transition: all .2s;
+    overflow: hidden;
+}
+
+.grid-item .buy span{
+    position: relative;
+    z-index: 4;
 }
 
 .section .grid-container .grid-item:hover{
@@ -333,8 +340,27 @@
     opacity: 1;
 } .noGif .grid-img .grid-logo:hover{opacity: .8 !important}
 
+.section .grid-item .buy::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    border-radius: 100px;
+    background-color: none;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    transition: all .4s ease-in-out;
+    transform-origin: center;
+    z-index: 1;
+}
+
+.section .grid-item .buy:hover::after{
+    transform: scale(400);
+    background-color: #0066e4;
+}
+
 .section .grid-item .buy:hover { /*Animación botón comprar (ADIDAS)*/
-    background-color: #005ccd;
     box-shadow: 5px 5px #000000;
     scale: 1.1;
 }
@@ -343,7 +369,7 @@
 .section { /*Fondo section Adidas*/
     width: 100%;
     padding: 1%;
-    padding-top: 60px;
+    padding-top: 50px;
 }
 
 .section h1 { /*Título section*/
@@ -369,29 +395,41 @@
 
 .row-grid {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     padding: 10px;
-} .textarea {grid-column: 1 / span 2; height: 120px;}
+} .textarea {grid-column: 1 / span 2}
+.textarea textarea{width: 100% !important;}
 
 .form input, .form textarea{
-    width: 100%;
-    margin-left: 20px;
+    width: 70%;
+    padding-left: 1%;
     font-size: 25px;
-    color: #3f3f3f;
+    color: #002743;
     font-family: Arial, Helvetica, sans-serif;
     resize: none;
     -webkit-appearance: textfield !important;
     -moz-appearance:textfield !important;
+}   
+
+.form .textarea {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1/span 2;
 }
 
 .form label h2{
     font-size: 30px;
-    color: #3f3f3f;
+    color: #002743;
+    margin-right: 10px;
 }
 
 #buyitems {
     grid-template-columns: repeat(6, 1fr) !important;
 } 
+
+#buyitems .grid-item:hover{
+    border: 0px !important;
+}
 /*//////Footer//////*/
 
 #footer {
@@ -527,14 +565,30 @@
     .section .grid-item .buy {
         padding: 5px 15px;
         font-size: 10px;
-        border-top-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        box-shadow: 2px 2px #d40000;
     }
 
-    .section .grid-item .buy:hover {
-        box-shadow: 2px 2px #000000;
+    .form {
+        grid-template-columns: 100% !important;
     }
+
+    .form label h2 {
+        font-size: 20px !important;
+        padding-right: 10px;
+    }
+
+    .textarea {
+        grid-column: 1 !important;
+    }
+
+    .form input, .form textarea {
+        margin-left: 0px;
+        font-size: 20px;
+    } .form textarea{height: 100px !important;}
+
+    #buyitems {
+        grid-template-columns: repeat(4, 1fr) !important;
+    } #buyitems h1 {font-size: 12px !important;}
+
     /*//////End Contenedor de items//////*/
 
     #footer .grid-container {
@@ -646,15 +700,29 @@
     .section .grid-item .buy {
         padding: 5px 20px;
         font-size: 12px;
-        border-top-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        box-shadow: 2px 2px #d40000;
     }
 
     .section .grid-item h2 {
         font-size: 15px;
     }
+
+    .form {
+        grid-template-columns: 100% !important;
+    }
+
+    .form input, .form textarea{
+        width: 75%;
+    }
+
+    .textarea {
+        grid-column: 1 !important;
+    }
+
+    #buyitems {
+        grid-template-columns: repeat(4, 1fr) !important;
+    } #buyitems h1 {font-size: 18px !important;}
     /*//////End Contenedor de items//////*/
+
     #footer h2 {
         color: #cdcdcd;
         font-size: 12px;
