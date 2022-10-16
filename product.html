@@ -12,6 +12,7 @@
     <script src="js/loader.js"></script>
     <script defer src="js/cart.js"></script>
     <script defer src="js/colapse-cart.js"></script>
+    <script defer src="js/product.js"></script>
     <link rel="icon" href="img/menu/icono.ico">
     <title>Document</title>
 </head>
@@ -62,7 +63,7 @@
                 </div>
                 <h2 class="total">Total: $0</h2>
                 <div class="button-cart">
-                    <a href="cart.html" class="btn-cart">Comprar</a>
+                    <a href="cart.html" class="btn-cart"><span>COMPRAR</span></a>
                 </div>
             </div>
         </nav>
@@ -73,44 +74,10 @@
             <div class="lds-dual-ring"></div>
         </section>
 
-        <section class="section">
-            <div class="container">
-                <div class="buy-form">
-                    <h1 class="adidas">FINALIZAR COMPRA</h1>
-                    <form action="" method="post" class="form">
-                        <div class="row-grid">
-                            <label for="name"><h2>Nombre:</h2></label>
-                            <input type="text" id="name" name="nameUser">
-                        </div>
-                        <div class="row-grid">
-                            <label for="surname"><h2>Apellidos:</h2></label>
-                            <input type="text" id="ape" name="apeUser">
-                        </div>
-                        <div class="row-grid">
-                            <label for="surname"><h2>Telefono:</h2></label>
-                            <input type="number" id="tel" name="telUser">
-                        </div>
-                        <div class="row-grid">
-                            <label for="mail"><h2>Mail:</h2></label>
-                            <input type="email" id="mail" name="mailUser">
-                        </div>
-                        <div class="row-grid textarea">
-                            <label for="msg"><h2>Mensaje:</h2></label>
-                            <textarea id="msg" name="msjUser"></textarea>
-                        </div>
-                    </form>
-                    <div class="container">
-                        <h1 class="adidas">Tus Productos</h1>
-                        <div id="buyitems" class="grid-container">
-                            
-                        </div>
-                    </div>
-                    <div class="button-cart">
-                        <a class="btn-cart"> Finalizar Comprar</a>
-                    </div>
-                </div>
-            </div>
+        <section id="selProdu" class="section">
+            
         </section>
+
     </main>
 
     <footer>

@@ -9,8 +9,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet">
+    <script src="js/loader.js"></script>
     <script defer src="js/cart.js"></script>
     <script defer src="js/colapse-cart.js"></script>
+    <script defer src="js/product.js"></script>
     <link rel="icon" href="img/menu/icono.ico">
     <title>Document</title>
 </head>
@@ -23,7 +25,7 @@
             </div>
 
             <div id="items" class="items">
-                <ul>
+                <ul class="menu-col">
                     <li>
                         <img src="img/menu/qatar-logo.png" alt="Logo Qatar" class="logo-menu">
                         <a href="#container">QATAR 2022</a>
@@ -68,11 +70,15 @@
     </header>
 
     <main>
+        <section class="loader">
+            <div class="lds-dual-ring"></div>
+        </section>
+
         <section id="top">
             <div id="banner">
                 <div class="banner">
                 </div>
-                <a class="button" href="#container">Ver Más</a>
+                <a class="more" href="#container">Ver Más</a>
                 <div id="banner_content"></div>
                 <div id="banner_tittle">
                     <h1>EL SENTIMIENTO DE UN PAÍS</h1>
@@ -88,6 +94,7 @@
                         <div class="grid-img">
                             <div class="grid-logo">
                                 <img src="img/logo/qatar/ale-logo.png" alt="ALEMANIA 2022" class="logo">
+                                <a class="button">Ver Más</a>
                             </div>
                             <img src="img/product/qatar/ale22.jpg" alt="ALEMANIA 2022" class="produ">
                             <div id="000" class="noDisplay">
@@ -97,8 +104,10 @@
                                 <span class="precio">24000</span>
                             </div>
                         </div>
-                        <h2>ALEMANIA</h2>
-                        <a class="buy" data-id="000"><span>COMPRAR</span></a>
+                        <div class="info">
+                            <h2>Alemania</h2>
+                            <a class="buy" data-id="000">COMPRAR</a>
+                        </div>
                     </div>
 
                     <div class="grid-item">
@@ -106,6 +115,7 @@
                             <div class="grid-logo">
                                 <img src="img/gif/esp.gif" alt="ESPAÑA 2022" class="gif">
                                 <img src="img/logo/qatar/esp-logo.png" alt="ESPAÑA 2022" class="logo">
+                                <a class="button">Ver Más</a>
                             </div>
                             <img src="img/product/qatar/esp22.jpg" alt="ESPAÑA 2022" class="produ">
                             <div id="001" class="noDisplay">
@@ -115,8 +125,10 @@
                                 <span class="precio">24000</span>
                             </div>
                         </div>
-                        <h2>ESPAÑA</h2>
-                        <a class="buy" data-id="001"><span>COMPRAR</span></a>
+                        <div class="info">
+                            <h2>España</h2>
+                            <a class="buy" data-id="001">COMPRAR</a>
+                        </div>
                     </div>
 
                     <div class="grid-item">
@@ -124,6 +136,7 @@
                             <div class="grid-logo">
                                 <img src="img/gif/arg.gif" alt="BELGICA 2022" class="gif">
                                 <img src="img/logo/qatar/arg-logo.png" alt="ARGENTINA 2022" class="logo">
+                                <a class="button">Ver Más</a>
                             </div>
                             <img src="img/product/qatar/arg22.jpg" alt="ARGENTINA 2022" class="produ">
                             <div id="002" class="noDisplay">
@@ -133,14 +146,17 @@
                                 <span class="precio">24000</span>
                             </div>
                         </div>
-                        <h2>ARGENTINA</h2>
-                        <a class="buy" data-id="002"><span>COMPRAR</span></a>
+                        <div class="info">
+                            <h2>Argentina</h2>
+                            <a class="buy" data-id="002">COMPRAR</a>
+                        </div>
                     </div>
 
                     <div class="grid-item">
                         <div class="grid-img">
                             <div class="grid-logo">
                                 <img src="img/logo/qatar/bel-logo.png" alt="BELGICA 2022" class="logo">
+                                <a class="button">Ver Más</a>
                             </div>
                             <img src="img/product/qatar/BEL22.jpg" alt="BELGICA 2022" class="produ">
                             <div id="003" class="noDisplay">
@@ -150,8 +166,10 @@
                                 <span class="precio">24000</span>
                             </div>
                         </div>
-                        <h2>BÉLGICA</h2>
-                        <a class="buy" data-id="003"><span>COMPRAR</span></a>
+                        <div class="info">
+                            <h2>Bélgica</h2>
+                            <a class="buy" data-id="003">COMPRAR</a>
+                        </div>
                     </div>
 
                 </div>
@@ -166,6 +184,7 @@
                             <div class="grid-logo">
                                 <img src="img/gif/eng.gif" alt="gif gol de INGLATERRA" class="gif">
                                 <img src="img/logo/qatar/eng-logo.png" alt="INGLATERRA 2022" class="logo">
+                                <a class="button">Ver Más</a>
                             </div>
                             <img src="img/product/qatar/eng22.jpg" alt="INGLATERRA 2022" class="produ">
                             <div id="004" class="noDisplay">
@@ -175,8 +194,10 @@
                                 <span class="precio">24000</span>
                             </div>
                         </div>
-                        <h2>INGLATERRA</h2>
-                        <a class="buy" data-id="004"><span>COMPRAR</span></a>
+                        <div class="info">
+                            <h2>Inglaterra</h2>
+                            <a class="buy" data-id="004">COMPRAR</a>
+                        </div>
                     </div>
 
                     <div class="grid-item">
@@ -184,6 +205,7 @@
                             <div class="grid-logo">
                                 <img src="img/gif/fra.gif" alt="gif gol de francia" class="gif">
                                 <img src="img/logo/qatar/fra-logo.png" alt="FRANCIA 2022" class="logo">
+                                <a class="button">Ver Más</a>
                             </div>
                             <img src="img/product/qatar/fra22.jpg" alt="FRANCIA 2022" class="produ">
                             <div id="005" class="noDisplay">
@@ -193,14 +215,17 @@
                                 <span class="precio">24000</span>
                             </div>
                         </div>
-                        <h2>FRANCIA</h2>
-                        <a class="buy" data-id="005"><span>COMPRAR</span></a>
+                        <div class="info">
+                            <h2>Francia</h2>
+                            <a class="buy" data-id="005">COMPRAR</a>
+                        </div>
                     </div>
 
                     <div class="grid-item">
                         <div class="grid-img">
                             <div class="grid-logo">
                                 <img src="img/logo/qatar/bra-logo.png" alt="BRASIL 2022" class="logo">
+                                <a class="button">Ver Más</a>
                             </div>
                             <img src="img/product/qatar/bra22.jpg" alt="BRASIL 2022" class="produ">
                             <div id="006" class="noDisplay">
@@ -210,8 +235,10 @@
                                 <span class="precio">24000</span>
                             </div>
                         </div>
-                        <h2>BRASIL</h2>
-                        <a class="buy" data-id="006"><span>COMPRAR</span></a>
+                        <div class="info">
+                            <h2>Brasil</h2>
+                            <a class="buy" data-id="006">COMPRAR</a>
+                        </div>
                     </div>
 
                     <div class="grid-item">
@@ -219,6 +246,7 @@
                             <div class="grid-logo">
                                 <img src="img/gif/por.gif" alt="gif ronaldo" class="gif">
                                 <img src="img/logo/qatar/por-logo.png" alt="PORTUGAL 2022" class="logo">
+                                <a class="button">Ver Más</a>
                             </div>
                             <img src="img/product/qatar/por22.jpg" alt="PORTUGAL 2022" class="produ">
                             <div id="007" class="noDisplay">
@@ -228,8 +256,10 @@
                                 <span class="precio">24000</span>
                             </div>
                         </div>
-                        <h2>PORTUGAL</h2>
-                        <a class="buy" data-id="007"><span>COMPRAR</span></a>
+                        <div class="info">
+                            <h2>Portugal</h2>
+                            <a class="buy" data-id="007">COMPRAR</a>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -3,7 +3,6 @@ let productos = []
 let container = document.querySelector('.cart-items')
 let buyitems = document.querySelector('#buyitems')
 let total = document.querySelector('.total')
-//let cant = document.querySelector('.grid-container')
 let totalcart = 0
 
 loadEventList()
@@ -15,7 +14,7 @@ function loadEventList() {
 
 function addPro(e) {
     if (e.target.classList.contains('buy')) {
-        const selectPro = e.target.parentElement
+        const selectPro = e.target.parentElement.parentElement
         readContent(selectPro)
     }
     cart_logo(productos)
@@ -35,8 +34,12 @@ function remove(e) {
                         cant.classList.replace('cantidad', 'noDisplay')
                         cant.innerHTML = ''
                     }
-                    
                 }
+
+                /*const selectLS = JSON.parse(localStorage.getItem('select'))
+                if(selectLS.id == value.id){
+                    localStorage.setItem('total', 0)
+                }*/
                 removeProdu(idProdu)
             }
         })
