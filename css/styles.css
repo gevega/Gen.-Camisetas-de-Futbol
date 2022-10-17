@@ -12,7 +12,7 @@
     position: fixed;
     width: 100%;
     height: 50px;
-    z-index: 5;
+    z-index: 6;
     background: linear-gradient(to right, #001f35, #005eb0);
     box-shadow: 0px 5px 10px black;
 }
@@ -278,7 +278,6 @@
     transition: all .5s;
 }
 
-
 .grid-img .grid-logo .logo { /*Imagen logo*/
     width: 70%;
     opacity: .8;
@@ -337,46 +336,156 @@
     border-bottom: 3px solid #002743;
 }
 
-.buy-form{
-    width: 100%;
-    padding-top: 50px;
-}
-
+/*//////Formularios//////*/
 .form {
+    width: 100%;
+	margin: auto; 
+	padding: 20px 0px; 
     display: grid;
-    justify-content: space-around;
-    justify-content: center;
-    margin-top: 30px;
-    grid-template-columns: repeat(2, 50%);
+    max-width: 800px;
+	grid-template-columns: 1fr 1fr;
+	gap: 10px 20px;
 }
 
-.row-grid {
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-} .textarea {grid-column: 1 / span 2; height: 120px;}
-
-.form input, .form textarea{
-    width: 100%;
-    margin-left: 20px;
-    font-size: 25px;
+.form_label {
+	display: block;
     color: #3f3f3f;
     font-family: Arial, Helvetica, sans-serif;
-    resize: none;
-    -webkit-appearance: textfield !important;
-    -moz-appearance:textfield !important;
+    font-size: 18px;  
+	font-weight: 700;
+	padding: 10px;
+	cursor: pointer;
 }
 
-.form label h2{
-    font-size: 30px;
-    color: #3f3f3f;
+.form_grupo-input {
+	position: relative;
+}
+
+.form_input {
+	width: 100%;
+    height: 45px;
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    border: 1px solid #00243e;
+	border-radius: 3px;
+	padding: 0 40px 0 10px;
+	transition: .3s ease all;
+}
+
+.form_input:focus {
+	border: 3px solid #0075ff;
+	outline: none;
+    box-shadow: 0px 0px 15px rgba(0, 83, 135, 1);
+    background-color: rgba(0, 83, 135, .1);
+}
+
+.form_input-error {
+	font-size: 12px;
+	margin-bottom: 0;
+	display: none;
+} 
+
+.form_input-error-activo {
+	display: block;
+}
+
+.form_validacion-estado {
+	position: absolute;
+	right: 10px;
+	top: 15px;
+	z-index: 5;
+	font-size: 16px;
+	opacity: 0;
+}
+
+.textarea {
+	height: 130px;
+	line-height: 20px;
+	padding: 10px 30px 10px 10px;
+	resize: none;
+    text-align: justify;
+}
+
+.form_span {
+	grid-column: span 2;
+}
+
+.form_error {
+	height: 45px;
+	line-height: 45px;
+	background: rgba(187, 41, 41, .9);
+	padding: 0 15px;
+    text-align: center;
+	border-radius: 3px;
+	display: none;
+}
+
+.form_error-activo {
+	display: block;
+}
+
+.form_error p {
+	margin: 0;
+}
+
+.form_grupo-btn-enviar {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.form_btn {
+	height: 45px;
+    width: 30%;
+    background: #005ccd;
+	color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: .1s ease all;
+}
+
+.form_btn:hover {
+    box-shadow: 0px 0px 20px rgba(0, 83, 135, 1);
+}
+
+.form_exito {
+	font-size: 14px;
+	color: #119200;
+    margin-top: 10px;
+	display: none;
+}
+
+.form_exito-activo {
+	display: block;
+}
+
+.form_grupo-correcto .form_validacion-estado {
+	color: #1ed12d;
+	opacity: 1;
+}
+
+.form_grupo-incorrecto .form_label {
+	color: #bb2929;
+}
+
+.form_grupo-incorrecto .form_validacion-estado {
+	color: #bb2929;
+	opacity: 1;
+}
+
+.form_grupo-incorrecto .form_input {
+	border: 3px solid #bb2929;
 }
 
 #buyitems {
     grid-template-columns: repeat(6, 1fr) !important;
-} 
-/*//////Footer//////*/
+}
 
+/*//////Footer//////*/
 #footer {
     background-color: #001e34;
     margin-top: 40px;
@@ -519,6 +628,22 @@
         box-shadow: 2px 2px #000000;
     }
     /*//////End Contenedor de items//////*/
+
+    /*//////Formulario de Contacto//////*/
+    .form {
+        grid-template-columns: 1fr;
+        width: 80%;
+    }
+    
+    .form_span {
+        grid-column: 1;
+    }
+    
+    .form_btn {
+        width: 100%;
+    }
+
+    /*//////  Footer  /////*/
 
     #footer .grid-container {
         grid-template-columns: repeat(2, 1fr) !important;
