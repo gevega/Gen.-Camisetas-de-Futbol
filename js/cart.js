@@ -137,9 +137,10 @@ function cart_logo(productos) {
     } else {
         cart.innerHTML = `
         <a>
-            <img src="img/svg/cart.svg" alt="Logo" class="cart">
+            <img src="" alt="" class="cart">
         </a>
         `
+        colapse.classList.remove('active-cart')
     }
 }
 
