@@ -337,6 +337,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 2%;
+    margin-bottom: 50px;
 }
 
 .grid-container .grid-item { /*Contenedor del producto*/
@@ -437,6 +438,10 @@
     cursor: pointer;
     user-select: none;
     transition: all .2s;
+}
+
+.section .posiciones {
+    width: 100%;
 }
 
 .grid-img .grid-logo:hover { /*Animación logo Hover*/
@@ -636,6 +641,7 @@
 #footer .grid-container {
     grid-template-columns: repeat(3, 1fr) !important;
     border-bottom: 2px solid #cdcdcd !important;
+    margin-bottom: 0px !important;
 }
 
 #footer .grid-item {
@@ -734,6 +740,11 @@
         margin: 10px;
         text-align: center;
         font-size: 25px;
+    }
+
+    .section .posiciones {
+        width: 90%;
+        margin-left: 5%;
     }
 
     #product .grid-item{

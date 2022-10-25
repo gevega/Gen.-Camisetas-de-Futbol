@@ -10,18 +10,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet">
     <script src="js/loader.js"></script>
+    <script defer type="module" src="https://widgets.api-sports.io/2.0.3/widgets.js"></script>
     <script defer src="js/cart.js"></script>
     <script defer src="js/colapse-cart.js"></script>
     <script defer src="js/product.js"></script>
-    <link rel="icon" href="img/menu/icono.ico">
-    <title>Document</title>
+    <link rel="icon" href="img/menu/logo.ico">
+    <title>Gen. Camisetas de Fútbol</title>
 </head>
 
 <body>
     <header>
         <nav id="menu">
             <div class="logo">
-                <a href="index.html"><img src="img/menu/adidas.png" alt="Logo"></a>
+                <a href="index.html"><img src="img/menu/logo.png" alt="Logo"></a>
             </div>
 
             <div id="items" class="items">
@@ -246,6 +247,13 @@
                         </div>
                     </div>
                 </div>
+                <h1>POSICIONES</h1>
+                <div class="posiciones">
+                    <div id="wg-api-football-standings" data-host="v3.football.api-sports.io"
+                        data-key="15274a4b46130f10cd3bbd9629c8df51" data-league="39" data-team="" data-season="2022"
+                        data-theme="" data-show-errors="false" data-show-logos="true" class="wg_loader">
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -259,7 +267,7 @@
                         <img src="img/svg/fb.svg" alt="Instagram logo" class="logo-footer">
                     </div>
                     <div class="grid-item">
-                        <img src="img/menu/adidas.png" alt="Logo" class="biglogo-footer">
+                        <img src="img/menu/logo.png" alt="Logo" class="biglogo-footer">
                     </div>
                     <div class="grid-item">
                         <img src="img/svg/tw.svg" alt="Twitter logo" class="logo-footer">
