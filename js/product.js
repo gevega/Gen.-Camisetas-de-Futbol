@@ -27,7 +27,7 @@ function readProdu(divProdu) {
 
 function saveLS(infoSel) {
     localStorage.setItem('select', JSON.stringify(infoSel))
-    window.location.href = "../product.html";
+    window.location.href = "product.html";
 }
 
 function readLS() {

@@ -110,6 +110,7 @@
     align-items: center;
     width: 20%;
     height: 100%;
+    margin-right: 10px;
     cursor: pointer;
     user-select: none;
     transition: all 0.3s;
@@ -408,7 +409,7 @@
     background: #005c9e;
     top: 0%;
 } .grid-item .noDisplay{display: none;}
-.cant h1{font-size: 25px !important; color: white !important; border-bottom: 0px !important;}
+.cant h1{font-size: 100% !important; color: white !important; border-bottom: 0px !important;}
 
 .grid-item .info {
     position: relative;
@@ -464,12 +465,6 @@
 }
 /*//////End Contenedor de items//////*/
 
-.section .grid-item .buy:active {
-    transform: translate(5px, 5px);
-    box-shadow: 0px 0px #000000;
-}
-/*//////End Contenedor de items//////*/
-
 /*//////Formularios//////*/
 .form {
     width: 100%;
@@ -517,6 +512,7 @@
 	font-size: 12px;
 	margin-bottom: 0;
 	display: none;
+    padding: 2px 10px;
 } 
 
 .form_input-error-activo {
@@ -622,6 +618,41 @@
 #buyitems .grid-item:hover{
     border: 0px !important;
 }
+
+.grid-iframe {
+    display: grid;
+    grid-template-columns: 3fr 2fr 3fr 2fr;
+    gap: 5px;
+    padding-top: 20px;
+    justify-content: center;
+}
+
+.iframe {
+    border: 1px solid #001e34;
+    box-shadow: 5px 5px 2px #005c9e;
+}
+
+.iframe:hover {
+    box-shadow: 5px 5px 2px #000000;
+}
+
+.sucursal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left:5px;
+    font-size: 13px;
+}
+
+.itext2 {
+    color:#005387;
+}
+
+.sucursal:hover .itext2 {
+    text-shadow: 1px 1px 10px gray;
+    transition: .2s;
+}
+
 /*//////Footer//////*/
 #footer {
     background-color: #001e34;
@@ -812,19 +843,10 @@
     }
 
     .cant h1 {
-        font-size: 18px !important;
+        font-size: 120% !important;
     }
 
-    .form {
-        grid-template-columns: 100% !important;
-    }
-
-    .form label h2 {
-        font-size: 20px !important;
-        padding-right: 10px;
-    }
-
-    /*//////Formulario de Contacto//////*/
+    /*//////Formularios//////*/
     .form {
         grid-template-columns: 1fr;
         width: 80%;
@@ -837,55 +859,38 @@
     .form_btn {
         width: 100%;
     }
-
-    /*//////  Footer  /////*/
-
-    /*//////Formulario de Contacto//////*/
-    .form {
-        grid-template-columns: 1fr;
-        width: 80%;
-    }
-    
-    .form_span {
-        grid-column: 1;
-    }
-    
-    .form_btn {
-        width: 100%;
-    }
-
-    /*//////  Footer  /////*/
-
-    /*//////Formulario de Contacto//////*/
-    .form {
-        grid-template-columns: 1fr;
-        width: 80%;
-    }
-    
-    .form_span {
-        grid-column: 1;
-    }
-    
-    .form_btn {
-        width: 100%;
-    }
-
-    /*//////  Footer  /////*/
-
-    .textarea {
-        grid-column: 1 !important;
-    }
-
-    .form input, .form textarea {
-        margin-left: 0px;
-        font-size: 20px;
-    } .form textarea{height: 100px !important;}
 
     #buyitems {
         grid-template-columns: repeat(3, 1fr) !important;
     } #buyitems h1 {font-size: 12px !important;}
 
-    /*//////End Contenedor de items//////*/
+    .grid-iframe {
+        grid-template-columns: 80%;
+        grid-template-rows: 3fr 2fr 3fr 2fr;
+    }
+
+    .sucursal {
+        display: inline-block;
+        text-align: center;
+        padding:10px 0px 30px 0px;
+        font-size: 13px;
+        /* border: 2px solid green; */
+    }
+    
+    #suc2 {
+        padding:10px 0px 30px 0px;
+        order: 4;
+    }
+    
+    .sucursal:hover .itext2 {
+        margin-left: 0px;
+    }
+
+    #suc2:hover .itext2 {
+        margin-right: 0px;
+    }
+
+    /*//////   Footer   //////*/
     #footer .biglogo-footer {
         width: 80%;
     }
@@ -1002,7 +1007,7 @@
     }
 
     .cant h1 {
-        font-size: 18px !important;
+        font-size: 120% !important;
     }
 
     .section .grid-item .buy {
@@ -1024,26 +1029,47 @@
         font-size: 15px;
     }
 
-    .form {
-        grid-template-columns: 100% !important;
-    }
-
-    .form input, .form textarea{
-        width: 75%;
-    }
-
-    .textarea {
-        grid-column: 1 !important;
-    }
-
     #buyitems {
         grid-template-columns: repeat(4, 1fr) !important;
     } #buyitems h1 {font-size: 18px !important;}
     /*//////End Contenedor de items//////*/
 
+    .grid-iframe {
+        grid-template-columns: 45% 45%;
+        grid-template-rows: 200px 200px;
+    }
+    
+    .sucursal {
+        padding-left:10px;
+    }
+    
+    #suc2 {
+        align-items: flex-end;
+        padding:5px;
+    }
+    
+    #iframe2 {
+        order: 4;
+    }
+    
+    .sucursal:hover .itext2 {
+        margin-left: 15px;
+        transition: .2s;
+    }
+    
+    #suc2:hover .itext2 {
+        margin-right: 15px;
+    }
+    
     #footer h2 {
         color: #cdcdcd;
         font-size: 12px;
         padding: 5px;
+    }
+}
+
+@media screen and (min-width: 640px) and (max-width: 840px) {
+    .cant h1 {
+        font-size: 80% !important;
     }
 }
