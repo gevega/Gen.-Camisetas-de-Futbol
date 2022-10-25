@@ -221,10 +221,10 @@
     align-items: flex-end;
     width: 100%;
     height: 100vh;
-    background-image: url('../img/banner/qatar22.jpg');
+    background-image: url('../img/banner/arg2.webp');
     background-size: cover;
     background-position-x: center;
-    background-position-y: center;
+    background-position-y: 50px;
 }
 
 #banner_content { /*Fondo para opacidad banner*/
@@ -409,7 +409,7 @@
     background: #005c9e;
     top: 0%;
 } .grid-item .noDisplay{display: none;}
-.cant h1{font-size: 100% !important; color: white !important; border-bottom: 0px !important;}
+.cant h1{font-size: 25px !important; color: white !important; border-bottom: 0px !important;}
 
 .grid-item .info {
     position: relative;
@@ -661,7 +661,8 @@
 
 #footer .biglogo-footer {
     width: 40%;
-}
+    transition: all .2s;
+} #footer .biglogo-footer:hover {transform: scale(1.05);}
 
 #footer .logo-footer {
     width: 20%;
