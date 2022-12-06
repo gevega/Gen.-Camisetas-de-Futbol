@@ -3,6 +3,12 @@ let colapse = document.getElementById('colapse-cart')
 let menu = document.getElementById('items')
 let items = document.querySelector('.menu-col')
 
+window.addEventListener('load',()=>{
+    const loader=document.querySelector('.loader')
+    loader.style.opacity=0
+    loader.style.visibility='hidden'
+})
+
 loadEventLis()
 function loadEventLis() {
     cart.addEventListener('click', show_cart)

@@ -35,11 +35,6 @@ function remove(e) {
                         cant.innerHTML = ''
                     }
                 }
-
-                /*const selectLS = JSON.parse(localStorage.getItem('select'))
-                if(selectLS.id == value.id){
-                    localStorage.setItem('total', 0)
-                }*/
                 removeProdu(idProdu)
             }
         })
@@ -86,7 +81,7 @@ function readContent(product) {
 function loadHTML() {
     clearhtml()
     productos.forEach(product => {
-        const { id, imagen, titulo, precio, cantidad } = product;
+        const { id, imagen, titulo, precio, cantidad } = product
         const fila = document.createElement('div')
         fila.classList.add('item')
         fila.innerHTML = `
@@ -182,13 +177,13 @@ function readLocalStorage() {
             <div class="remove">
                 <img src="img/svg/remove.svg" class="remove" data-id="${producto.id}" alt="">
             </div>
-            `;
+            `
 
             if (document.getElementById(producto.id)) {
                 let cant = document.getElementById(producto.id)
                 cant.innerHTML = `<div id="${producto.id}" class="cant"><h1>${producto.cantidad}</h1></div>`
                 if (producto.cantidad > 0) {
-                    cant.classList.replace('noDisplay', 'cantidad');
+                    cant.classList.replace('noDisplay', 'cantidad')
                 }
             }
 

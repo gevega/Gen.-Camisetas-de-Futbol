@@ -27,7 +27,7 @@ function readProdu(divProdu) {
 
 function saveLS(infoSel) {
     localStorage.setItem('select', JSON.stringify(infoSel))
-    window.location.href = "product.html";
+    window.location.href = "product.html"
 }
 
 function readLS() {
@@ -65,10 +65,9 @@ function readLS() {
                 let cant = document.getElementById(selectLS.id)
                 cant.innerHTML = `<div id="${selectLS.id}" class="cant"><h1>${selectLS.cantidad}</h1></div>`
                 if (selectLS.cantidad > 0) {
-                    cant.classList.replace('noDisplay', 'cantidad');
+                    cant.classList.replace('noDisplay', 'cantidad')
                 }
             } 
         }
     }
 }
-
